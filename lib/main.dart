@@ -1,5 +1,7 @@
 import 'package:first/screens/home.dart';
+import 'package:first/utilities/translation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -15,17 +17,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+    return ScreenUtilInit(
+      designSize: const Size(1080, 2280),
+      builder: () => GetMaterialApp(
+        translations: Messages(),
+        fallbackLocale: const Locale('en','US'),
+        locale: Get.deviceLocale,
+        title: 'Flutter Demo',
+        theme: Get.isDarkMode? ThemeData.dark(): ThemeData.light(),
 
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      getPages: [
-        GetPage(name: '/', page: ()=>StartPage())
-      ],
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        getPages: [
+          GetPage(name: '/', page: ()=>StartPage())
+        ],
+      ),
     );
   }
 }
