@@ -16,7 +16,9 @@ class StartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(onPressed:(){ Get.toNamed('/settingspage');}, icon: Icon(Icons.settings)),
         title: const Text('Testing'),
+        
       ),
       body: SingleChildScrollView(
         child: Center(

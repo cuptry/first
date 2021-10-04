@@ -12,6 +12,7 @@ class Resetbutton{
       child: Text(
         "초기화".tr,
         textAlign: TextAlign.center,
+        // ignore: prefer_const_constructors
         style: TextStyle(
             fontSize: 12.0,
             fontWeight: FontWeight.bold),
