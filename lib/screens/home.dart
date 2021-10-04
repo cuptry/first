@@ -1,7 +1,7 @@
-import 'package:first/themes/inputexpresses.dart';
-import 'package:first/themes/resetbutton.dart';
-import 'package:first/themes/savebutton.dart';
-import 'package:first/themes/themes.dart';
+import 'package:first/themes/homethemes/inputexpresses.dart';
+import 'package:first/themes/homethemes/resetbutton.dart';
+import 'package:first/themes/homethemes/outputexpresses.dart';
+import 'package:first/themes/homethemes/savebutton.dart';
 import 'package:first/utilities/getxadmobtool.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

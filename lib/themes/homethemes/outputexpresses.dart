@@ -1,9 +1,7 @@
-
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 
 // 결과 값 타이틀 및 값 출력
 class OutPutExpresses {
@@ -17,16 +15,22 @@ class OutPutExpresses {
           fontWeight: FontWeight.bold,
           fontSize: 22.0,
         ),
-
       ),
-      totalresult(title: "평 단 가", resultvalue: 'fuckyou',),
-      totalresult(title: "수      량", resultvalue: 'fuckyou',),
-      totalresult(title: "총 금 액", resultvalue: 'fuckyou',),
+      totalresult(
+        title: "평 단 가",
+        resultvalue: 'fuckyou',
+      ),
+      totalresult(
+        title: "수      량",
+        resultvalue: 'fuckyou',
+      ),
+      totalresult(
+        title: "총 금 액",
+        resultvalue: 'fuckyou',
+      ),
     ],
   ));
 }
-
-
 
 //값 출력
 class totalresult extends StatelessWidget {
@@ -56,7 +60,8 @@ class totalresult extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.55,
                   height: MediaQuery.of(context).size.height * 0.05,
                   child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal, child: Text(resultvalue)),
+                      scrollDirection: Axis.horizontal,
+                      child: Text(resultvalue)),
                 ),
               ],
             ),
@@ -66,8 +71,3 @@ class totalresult extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
