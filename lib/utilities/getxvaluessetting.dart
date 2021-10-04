@@ -24,4 +24,30 @@ class Maincontroller extends GetxController {
     addHavingQuantity.close();
   }
 
+  //현재 총 금액
+  dynamic get nowtotal =>
+      num.parse(nowprice.value) * num.parse(nowqunatity.value);
+
+//추가 총 금액
+  dynamic get addtotal =>
+      num.parse(addprice.value) * num.parse(addqunatity.value);
+
+//최종 금액 값
+  dynamic get resulttotalprice =>
+      (num.parse(nowprice.value) * num.parse(nowqunatity.value)) +
+          (num.parse(addprice.value) * num.parse(addqunatity.value));
+
+//최종 수량 값
+  dynamic get resulttotalqunatity =>
+      num.parse(nowqunatity.value) + num.parse(addqunatity.value);
+
+//최종 평단가
+  dynamic get resulttotalaverageprice =>
+      resulttotalprice ~/ resulttotalqunatity;
+
+  dynamic get resulttotalaverageprice2 =>
+      resulttotalprice / resulttotalqunatity;
+
+
+
 }
