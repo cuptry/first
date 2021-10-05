@@ -1,7 +1,11 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers
 
+import 'package:first/utilities/getxvaluessetting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+
+final controllers = Get.put(Maincontroller());
 
 // 결과 값 타이틀 및 값 출력
 class OutPutExpresses {
@@ -18,15 +22,15 @@ class OutPutExpresses {
       ),
       totalresult(
         title: "평 단 가",
-        resultvalue: 'fuckyou',
+        resultvalue: controllers.textwidgetsprice2(),
       ),
       totalresult(
         title: "수      량",
-        resultvalue: 'fuckyou',
+        resultvalue: controllers.textwidgetsprice3(),
       ),
       totalresult(
         title: "총 금 액",
-        resultvalue: 'fuckyou',
+        resultvalue: controllers.textwidgetsprice1(),
       ),
     ],
   ));
@@ -61,7 +65,7 @@ class totalresult extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.05,
                   child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
-                      child: Text(resultvalue)),
+                      child: resultvalue),
                 ),
               ],
             ),
@@ -71,3 +75,4 @@ class totalresult extends StatelessWidget {
     );
   }
 }
+

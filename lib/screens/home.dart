@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:first/themes/homethemes/inputexpresses.dart';
 import 'package:first/themes/homethemes/resetbutton.dart';
 import 'package:first/themes/homethemes/outputexpresses.dart';
@@ -17,6 +19,7 @@ class StartPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(onPressed:(){ Get.toNamed('/settingspage');}, icon: Icon(Icons.settings)),
+        actions: [IconButton(onPressed: (){Get.toNamed('/transactionlist');}, icon: Icon(Icons.archive))],
         title: const Text('Testing'),
         
       ),
@@ -29,6 +32,7 @@ class StartPage extends StatelessWidget {
               Inputexpresses().inputValueExpress,
               Resetbutton().formFieldResetButton,
               SaveButton().formFieldValueSave,
+              //Container(child: c.adWidget),
 
             ],
           ),

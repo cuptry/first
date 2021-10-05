@@ -53,8 +53,9 @@ class SaveButton {
             duration: Duration(seconds: 2),
             isDismissible: true,
             dismissDirection: SnackDismissDirection.HORIZONTAL,
-            forwardAnimationCurve: Curves.easeOutBack, onTap: (_) {
-              Get.toNamed("/saved");
+            forwardAnimationCurve: Curves.easeOutBack,
+            onTap: (_) {
+              Get.toNamed("/transactionlist");
             });
       },
     ),

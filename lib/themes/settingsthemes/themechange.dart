@@ -40,20 +40,20 @@ class Themechange extends StatelessWidget {
 
 //언어 변경
 class Langchange extends StatelessWidget {
-  RxBool iskorea =
-      Get.deviceLocale == Locale('ko', 'KR') ? false.obs : true.obs;
+  RxBool isKorean = Get.deviceLocale == Locale('ko','KR') ? true.obs : false.obs;
+  var englishLocale = Locale('en', 'US');
+  var koreaLocale =Locale('ko', 'KR');
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Obx(() => Switch(
-          value: iskorea.value,
-          onChanged: (checked) {
-            checked ? Get.updateLocale(Locale('ko', 'KR')) : Get.updateLocale(Locale('en', 'US'));
-            print(iskorea);
-            iskorea.value = checked;
-            print(Get.deviceLocale);
-            print(iskorea);
+      child: Obx(
+            () => Switch(
+          value: isKorean.value,
+          onChanged: (checked)  {
+
+            isKorean.value = checked;
+            print(checked);
           },
         ),
       ),

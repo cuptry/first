@@ -20,6 +20,15 @@ class SettingsPage extends StatelessWidget{
               Row(
                 children: [SettingsTitles(title: '언어'),Langchange()],
               ),
+              Row(
+                children: [SettingsTitles(title: '앱버전'),],
+              ),
+              Row(
+                children: [SettingsTitles(title: '이용약관'),],
+              ),
+              Row(
+                children: [SettingsTitles(title: '문의 및 의견'),],
+              ),
             ],
           ),
         ),
