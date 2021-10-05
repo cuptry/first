@@ -29,7 +29,7 @@ class Maincontroller extends GetxController {
   NumberFormat.currency(symbol: '', decimalDigits: 10); //소수점 있는 수량
 
  // 재부팅되도 저장
- /* final box = GetStorage();
+ final box = GetStorage();
   @override
   void onInit() {
     ever(totalrows, (_) {
@@ -44,7 +44,7 @@ class Maincontroller extends GetxController {
       box.write('addrows', addrows);
       print('실핼');
     });
-  }*/
+  }
 
 
   @override

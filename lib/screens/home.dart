@@ -5,12 +5,13 @@ import 'package:first/themes/homethemes/resetbutton.dart';
 import 'package:first/themes/homethemes/outputexpresses.dart';
 import 'package:first/themes/homethemes/savebutton.dart';
 import 'package:first/utilities/getxadmobtool.dart';
+import 'package:first/utilities/getxvaluessetting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class StartPage extends StatelessWidget {
   Getxadmobtool c = Get.put(Getxadmobtool());
-
+  final controllers = Get.put(Maincontroller());
 
 
 
