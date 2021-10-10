@@ -1,9 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class Getxadmobtool extends GetxController{
+  Container? adContainer;
 
-  AdWidget? adWidget;
 
   @override
   void onInit(){
@@ -13,7 +14,13 @@ class Getxadmobtool extends GetxController{
       request: const AdRequest(),
       listener: const BannerAdListener(),
     )..load();
-    adWidget = AdWidget(ad: anchoredBanner);
+    final adWidget = AdWidget(ad: anchoredBanner);
+    adContainer = Container(
+      alignment: Alignment.center,
+      child: adWidget,
+      width: anchoredBanner.size.width.toDouble(),
+      height: anchoredBanner.size.height.toDouble(),
+    );
   }
 
 }

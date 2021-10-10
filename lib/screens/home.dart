@@ -9,9 +9,13 @@ import 'package:first/utilities/getxvaluessetting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+
+Getxadmobtool c = Get.put(Getxadmobtool());
+final controllers = Get.put(Maincontroller());
+
+
 class StartPage extends StatelessWidget {
-  Getxadmobtool c = Get.put(Getxadmobtool());
-  final controllers = Get.put(Maincontroller());
+
 
 
 
@@ -25,6 +29,7 @@ class StartPage extends StatelessWidget {
         
       ),
       body: SingleChildScrollView(
+
         child: Center(
           child: Column(
             children: [
@@ -33,7 +38,8 @@ class StartPage extends StatelessWidget {
               Inputexpresses().inputValueExpress,
               Resetbutton().formFieldResetButton,
               SaveButton().formFieldValueSave,
-              //Container(child: c.adWidget),
+
+              Container(child: c.adContainer),
 
             ],
           ),

@@ -34,7 +34,7 @@ class Maincontroller extends GetxController {
   void onInit() {
     ever(totalrows, (_) {
       box.write('totalrows', totalrows);
-      print('실행');
+      print('쓰기 실행');
     });
     ever(nowrows, (_) {
       box.write('nowrows', nowrows);
@@ -44,6 +44,19 @@ class Maincontroller extends GetxController {
       box.write('addrows', addrows);
       print('실핼');
     });
+
+    if(box.read('totalrows')!= null)
+    {
+      totalrows.value = box.read('totalrows');
+    }
+    if(box.read('nowrows')!= null)
+    {
+      nowrows.value = box.read('nowrows');
+    }
+    if(box.read('addrows')!= null)
+    {
+      addrows.value = box.read('addrows');
+    }
   }
 
 
