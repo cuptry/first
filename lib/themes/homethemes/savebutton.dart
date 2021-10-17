@@ -1,16 +1,23 @@
+import 'package:first/constants/Theme.dart';
 import 'package:first/utilities/getxvaluessetting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 final controllers = Get.put(Maincontroller());
-
 class SaveButton {
   final Container formFieldValueSave = Container(
     child: TextButton(
       child: Text(
         "저장".tr,
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold),
+        style: TextStyle(
+            color: AppColors
+                .white,
+            fontSize:
+            12.0,
+            fontWeight:
+            FontWeight
+                .bold),
       ),
       onPressed: () {
         Map totalvalues = {
@@ -48,6 +55,8 @@ class SaveButton {
         Get.snackbar("저장완료".tr, "저장 내역들을 보려면 터치하세요".tr,
             // icon: Icon(Icons.save_alt, color: Colors.white),
             snackPosition: SnackPosition.BOTTOM,
+            backgroundColor: AppColors.success,
+            colorText: AppColors.bgColorScreen,
             borderRadius: 20,
             margin: EdgeInsets.all(10),
             duration: Duration(seconds: 2),

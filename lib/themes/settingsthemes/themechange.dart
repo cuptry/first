@@ -4,9 +4,7 @@ import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
 class SettingsTitles extends StatelessWidget {
   SettingsTitles({required this.title});
-
   String title;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +19,6 @@ class SettingsTitles extends StatelessWidget {
 // 테마 변경
 class Themechange extends StatelessWidget {
   RxBool isSwitched = Get.isDarkMode ? true.obs : false.obs;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +40,6 @@ class Langchange extends StatelessWidget {
   RxBool isKorean = Get.deviceLocale == Locale('ko','KR') ? true.obs : false.obs;
   var englishLocale = Locale('en', 'US');
   var koreaLocale =Locale('ko', 'KR');
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,7 +47,6 @@ class Langchange extends StatelessWidget {
             () => Switch(
           value: isKorean.value,
           onChanged: (checked)  {
-
             isKorean.value = checked;
             print(checked);
           },

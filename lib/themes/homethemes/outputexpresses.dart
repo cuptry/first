@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers
 
+import 'package:first/constants/Theme.dart';
 import 'package:first/utilities/getxvaluessetting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 
 final controllers = Get.put(Maincontroller());
 
@@ -18,8 +18,10 @@ class OutPutExpresses {
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 22.0,
+            color: AppColors.text,
         ),
       ),
+      SizedBox(height: 20.0),
       totalresult(
         title: "평 단 가",
         resultvalue: controllers.textwidgetsprice2(),
@@ -32,6 +34,13 @@ class OutPutExpresses {
         title: "총 금 액",
         resultvalue: controllers.textwidgetsprice1(),
       ),
+      SizedBox(height: 10.0),
+      Divider(
+        height: 40.0,
+        thickness: 1.0,
+        indent: 32.0,
+        endIndent: 32.0,
+      ),
     ],
   ));
 }
@@ -39,6 +48,7 @@ class OutPutExpresses {
 //값 출력
 class totalresult extends StatelessWidget {
   totalresult({required this.title, this.resultvalue});
+
   String title;
   var resultvalue;
 
@@ -64,8 +74,7 @@ class totalresult extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.55,
                   height: MediaQuery.of(context).size.height * 0.05,
                   child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: resultvalue),
+                      scrollDirection: Axis.horizontal, child: resultvalue),
                 ),
               ],
             ),
@@ -75,4 +84,3 @@ class totalresult extends StatelessWidget {
     );
   }
 }
-

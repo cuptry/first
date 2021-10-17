@@ -4,10 +4,8 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 final controllers = Get.put(Maincontroller());
-
 class TransactionDatatable extends StatelessWidget {
   const TransactionDatatable({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -71,16 +69,13 @@ class TransactionDatatable extends StatelessWidget {
 
 
 //DataTable 값 row
-
 datarows(List totalrowvalue, List nowrowvalue, List addrowvalue) {
-
   controllers.datarowes.value = [];
   String aa = '';
   String bb = '';
   String cc = '현 재'.tr + '\n' + '추 가'.tr + '\n' + '최 종';
   for (var i = 0; i < totalrowvalue.length; i++) {
     List<DataCell> cells = [];
-
     cells.add(DataCell(Text('${i + 1}')));
     cells.add(DataCell(Text(cc)));
     for (var j in totalrowvalue[i].keys) {
@@ -138,7 +133,6 @@ datarows(List totalrowvalue, List nowrowvalue, List addrowvalue) {
                                   controllers.addHavingQuantity.value.clear();
                                   controllers.addprice.value = '';
                                   controllers.addqunatity.value = '';
-
                                   Get.back();
                                 },
                                 child: Text(

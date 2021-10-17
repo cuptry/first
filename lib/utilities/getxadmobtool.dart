@@ -4,8 +4,6 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class Getxadmobtool extends GetxController{
   Container? adContainer;
-
-
   @override
   void onInit(){
     BannerAd anchoredBanner = BannerAd(
@@ -22,5 +20,4 @@ class Getxadmobtool extends GetxController{
       height: anchoredBanner.size.height.toDouble(),
     );
   }
-
 }

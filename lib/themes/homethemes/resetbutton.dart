@@ -1,12 +1,11 @@
+import 'package:first/constants/Theme.dart';
 import 'package:first/utilities/getxvaluessetting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
 final controllers = Get.put(Maincontroller());
-
 class Resetbutton{
-
   final Container formFieldResetButton = Container(
     child: TextButton(
       child: Text(
@@ -14,8 +13,14 @@ class Resetbutton{
         textAlign: TextAlign.center,
         // ignore: prefer_const_constructors
         style: TextStyle(
-            fontSize: 12.0,
-            fontWeight: FontWeight.bold),
+            color:
+            AppColors
+                .white,
+            fontSize:
+            12.0,
+            fontWeight:
+            FontWeight
+                .bold),
       ),
       onPressed: () {
         controllers.totalrows.value.clear;

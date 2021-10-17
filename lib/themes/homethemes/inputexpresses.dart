@@ -1,34 +1,37 @@
+import 'package:first/constants/Theme.dart';
 import 'package:first/utilities/getxvaluessetting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 final controllers = Get.put(Maincontroller());
-
 class Inputexpresses {
   final Container inputValueExpress = Container(
       child: Column(
     children: [
-      BigeertotalFormFieldtitle(titleimage: Icons.arrow_right_rounded,
-          title: '현재보유'),
+      BigeertotalFormFieldtitle(
+          titleimage: Icons.arrow_right_rounded, title: '현재보유'),
       Inputformfields(
-        formfieldtitle: '가격',
+        formfieldtitle: '평  단  가',
         textcontoller: controllers.nowHavingPrice,
         textstring: controllers.nowprice,
       ),
       Inputformfields(
-        formfieldtitle: '수량',
+        formfieldtitle: '수        량',
         textcontoller: controllers.nowHavingQuantity,
         textstring: controllers.nowqunatity,
       ),
-      BigeertotalFormFieldtitle(titleimage: Icons.arrow_right_rounded,
-          title: '추가매수'),
+      SizedBox(
+        height: 10,
+      ),
+      BigeertotalFormFieldtitle(
+          titleimage: Icons.arrow_right_rounded, title: '추가매수'),
       Inputformfields(
-        formfieldtitle: '가격',
+        formfieldtitle: '평  단  가',
         textcontoller: controllers.addHavingPrice,
         textstring: controllers.addprice,
       ),
       Inputformfields(
-        formfieldtitle: '수량',
+        formfieldtitle: '수        량',
         textcontoller: controllers.addHavingQuantity,
         textstring: controllers.addqunatity,
       )
@@ -36,16 +39,13 @@ class Inputexpresses {
   ));
 }
 
-
 //enum OrderType{BUY, SELL}
 // 폼필드 타이틀
 class BigeertotalFormFieldtitle extends StatelessWidget {
-
   BigeertotalFormFieldtitle({required this.titleimage, required this.title});
 
   final IconData titleimage;
   final String title;
-
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +57,7 @@ class BigeertotalFormFieldtitle extends StatelessWidget {
           Icon(
             titleimage,
             size: 14.0,
+            color: AppColors.initial,
           ),
           Text(title.tr,
               style: TextStyle(
@@ -67,10 +68,7 @@ class BigeertotalFormFieldtitle extends StatelessWidget {
       ),
     );
   }
-
 }
-
-
 
 // 텍스트 폼 필드
 class Inputformfields extends StatelessWidget {
@@ -79,29 +77,34 @@ class Inputformfields extends StatelessWidget {
       required this.textcontoller,
       required this.textstring});
 
-
-
-
   String formfieldtitle;
   RxString textstring;
   Rx<TextEditingController> textcontoller;
 
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.of(context).size.width * 0.8,
       child: Column(
         children: [
           Row(
             children: [
-              Text(formfieldtitle.tr,
-                  style: TextStyle(
-                      color: Color.fromRGBO(50, 50, 93, 1), fontSize: 14.0)),
               Container(
-                width: MediaQuery.of(context).size.width * 0.8,
+                width: MediaQuery.of(context).size.width * 0.15,
+                height: MediaQuery.of(context).size.height * 0.05,
+                alignment: Alignment.centerLeft,
+                child: Text(formfieldtitle.tr,
+                    style: TextStyle(
+                        color: Color.fromRGBO(50, 50, 93, 1), fontSize: 14.0)),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.65,
+                height: MediaQuery.of(context).size.height * 0.05,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(5.0)),
                 ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
                   child: Obx(
                     () => Container(
                       width: MediaQuery.of(context).size.width * 0.6,

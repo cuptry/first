@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:first/screens/home.dart';
 import 'package:first/screens/settings.dart';
 import 'package:first/screens/tansactionlist.dart';
@@ -14,13 +13,11 @@ main() async {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
   await GetStorage.init();
-
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -31,7 +28,6 @@ class MyApp extends StatelessWidget {
         locale: Get.deviceLocale,
         title: 'Flutter Demo',
         theme: Get.isDarkMode? ThemeData.dark(): ThemeData.light(),
-
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
         getPages: [

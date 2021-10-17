@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 final controllers = Get.put(Maincontroller());
-
 class ListResetButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

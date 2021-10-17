@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 
 class TansactionListPage extends StatelessWidget {
   const TansactionListPage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +15,6 @@ class TansactionListPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Center(
-
           child: Column(children: [
             ListResetButton(),
             TransactionDatatable(),

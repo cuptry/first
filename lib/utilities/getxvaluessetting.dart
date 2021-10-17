@@ -1,12 +1,10 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:intl/intl.dart';
 
 class Maincontroller extends GetxController {
-
   var nowHavingPrice = TextEditingController().obs;
   var nowHavingQuantity = TextEditingController().obs;
   var addHavingPrice = TextEditingController().obs;
@@ -44,7 +42,6 @@ class Maincontroller extends GetxController {
       box.write('addrows', addrows);
       print('실핼');
     });
-
     if(box.read('totalrows')!= null)
     {
       totalrows.value = box.read('totalrows');
@@ -59,7 +56,6 @@ class Maincontroller extends GetxController {
     }
   }
 
-
   @override
   void onClose() {
     super.onClose();
@@ -73,20 +69,20 @@ class Maincontroller extends GetxController {
   dynamic get nowtotal =>
       num.parse(nowprice.value) * num.parse(nowqunatity.value);
 
-//추가 총 금액
+  //추가 총 금액
   dynamic get addtotal =>
       num.parse(addprice.value) * num.parse(addqunatity.value);
 
-//최종 금액 값
+  //최종 금액 값
   dynamic get resulttotalprice =>
       (num.parse(nowprice.value) * num.parse(nowqunatity.value)) +
           (num.parse(addprice.value) * num.parse(addqunatity.value));
 
-//최종 수량 값
+  //최종 수량 값
   dynamic get resulttotalqunatity =>
       num.parse(nowqunatity.value) + num.parse(addqunatity.value);
 
-//최종 평단가
+  //최종 평단가
   dynamic get resulttotalaverageprice =>
       resulttotalprice ~/ resulttotalqunatity;
 
@@ -111,14 +107,12 @@ class Maincontroller extends GetxController {
       dynamic targetvaluedecimaldigit10 =
       double.parse(targetvaluedecimal.toStringAsFixed(10));
       int i = 1;
-
       if (targetvaluedecimal == 0.0) {
         return formatCurrency.format(resulttotalaverageprice2).toString();
       } else {
         for (int i = 1; i < 11; i++) {
           double cc = 0.0;
           cc = targetvaluedecimaldigit10 * pow(10, i);
-
           if (cc == cc.floorToDouble()) {
             print('소수점 자리는 $i 입니다.');
             return NumberFormat.currency(symbol: '', decimalDigits: i)
@@ -132,9 +126,7 @@ class Maincontroller extends GetxController {
     }
   }
 
-
-
-// 최종 수량
+  // 최종 수량
   textwidgetsprice3() {
     var a = Obx(()=>Text(resulttotalqunatityfunction(),
         style: TextStyle(
@@ -142,8 +134,6 @@ class Maincontroller extends GetxController {
             fontSize: 22.0,
             fontWeight: FontWeight.bold)));
     return a;
-
-
   }
 
   //최종수량
@@ -154,14 +144,12 @@ class Maincontroller extends GetxController {
       dynamic targetvaluedecimaldigit10 =
       double.parse(targetvaluedecimal.toStringAsFixed(10));
       int i = 1;
-
       if (targetvaluedecimal == 0.0) {
         return formatCurrency.format(resulttotalqunatity).toString();
       } else {
         for (int i = 1; i < 11; i++) {
           double cc = 0.0;
           cc = targetvaluedecimaldigit10 * pow(10, i);
-
           if (cc == cc.floorToDouble()) {
             print('소수점 자리는 $i 입니다.');
             return NumberFormat.currency(symbol: '', decimalDigits: i)
@@ -175,7 +163,7 @@ class Maincontroller extends GetxController {
     }
   }
 
-// 최종 금액
+  // 최종 금액
   textwidgetsprice1() {
     var a = Obx(()=>Text(resulttotalpricefunction(),
         style: TextStyle(
@@ -185,7 +173,6 @@ class Maincontroller extends GetxController {
     return a;
   }
 
-
   //최종금액
   resulttotalpricefunction() {
     try {
@@ -194,14 +181,12 @@ class Maincontroller extends GetxController {
       dynamic targetvaluedecimaldigit10 =
       double.parse(targetvaluedecimal.toStringAsFixed(10));
       int i = 1;
-
       if (targetvaluedecimal == 0.0) {
         return formatCurrency.format(resulttotalprice).toString();
       } else {
         for (int i = 1; i < 11; i++) {
           double cc = 0.0;
           cc = targetvaluedecimaldigit10 * pow(10, i);
-
           if (cc == cc.floorToDouble()) {
             print('소수점 자리는 $i 입니다.');
             return NumberFormat.currency(symbol: '', decimalDigits: i)
@@ -223,14 +208,12 @@ class Maincontroller extends GetxController {
       dynamic targetvaluedecimaldigit10 =
       double.parse(targetvaluedecimal.toStringAsFixed(10));
       int i = 1;
-
       if (targetvaluedecimal == 0.0) {
         return formatCurrency.format(nowtotal).toString();
       } else {
         for (int i = 1; i < 11; i++) {
           double cc = 0.0;
           cc = targetvaluedecimaldigit10 * pow(10, i);
-
           if (cc == cc.floorToDouble()) {
             print('소수점 자리는 $i 입니다.');
             return NumberFormat.currency(symbol: '', decimalDigits: i)
@@ -243,6 +226,7 @@ class Maincontroller extends GetxController {
       return '';
     }
   }
+
   //추가금액
   addtotalfunction() {
     try {
@@ -251,14 +235,12 @@ class Maincontroller extends GetxController {
       dynamic targetvaluedecimaldigit10 =
       double.parse(targetvaluedecimal.toStringAsFixed(10));
       int i = 1;
-
       if (targetvaluedecimal == 0.0) {
         return formatCurrency.format(addtotal).toString();
       } else {
         for (int i = 1; i < 11; i++) {
           double cc = 0.0;
           cc = targetvaluedecimaldigit10 * pow(10, i);
-
           if (cc == cc.floorToDouble()) {
             print('소수점 자리는 $i 입니다.');
             return NumberFormat.currency(symbol: '', decimalDigits: i)
@@ -271,8 +253,4 @@ class Maincontroller extends GetxController {
       return '';
     }
   }
-
-
-
-
 }
