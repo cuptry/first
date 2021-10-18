@@ -1,4 +1,5 @@
-import 'package:first/utilities/getxvaluessetting.dart';
+import 'package:averageprice_calculator/constants/Theme.dart';
+import 'package:averageprice_calculator/utilities/getxvaluessetting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +13,7 @@ class ListResetButton extends StatelessWidget {
           "초기화".tr,
           textAlign: TextAlign.center,
           style: TextStyle(
-            color: Colors.black,
+            color: AppColors.text,
             fontSize: 12.0,
             // fontWeight:
             // FontWeight

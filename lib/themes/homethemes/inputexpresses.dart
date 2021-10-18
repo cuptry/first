@@ -1,5 +1,5 @@
-import 'package:first/constants/Theme.dart';
-import 'package:first/utilities/getxvaluessetting.dart';
+import 'package:averageprice_calculator/constants/Theme.dart';
+import 'package:averageprice_calculator/utilities/getxvaluessetting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

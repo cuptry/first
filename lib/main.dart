@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
-import 'package:first/screens/home.dart';
-import 'package:first/screens/settings.dart';
-import 'package:first/screens/tansactionlist.dart';
-import 'package:first/utilities/translation.dart';
+import 'package:averageprice_calculator/screens/home.dart';
+import 'package:averageprice_calculator/screens/settings.dart';
+import 'package:averageprice_calculator/screens/tansactionlist.dart';
+import 'package:averageprice_calculator/utilities/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         translations: Messages(),
         fallbackLocale: const Locale('en','US'),
         locale: Get.deviceLocale,
-        title: 'Flutter Demo',
+        title: 'Averageprice Calculator',
         theme: Get.isDarkMode? ThemeData.dark(): ThemeData.light(),
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
