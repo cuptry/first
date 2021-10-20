@@ -3,7 +3,10 @@ import 'package:averageprice_calculator/utilities/getxvaluessetting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'outputtotalexpress.dart';
+
 final controllers = Get.put(Maincontroller());
+
 class Inputexpresses {
   final Container inputValueExpress = Container(
       child: Column(
@@ -20,6 +23,9 @@ class Inputexpresses {
         textcontoller: controllers.nowHavingQuantity,
         textstring: controllers.nowqunatity,
       ),
+      OutputTotalExpress(
+        totalvalue: controllers.nowtotalfunction(),
+      ),
       SizedBox(
         height: 10,
       ),
@@ -34,7 +40,10 @@ class Inputexpresses {
         formfieldtitle: '수        량',
         textcontoller: controllers.addHavingQuantity,
         textstring: controllers.addqunatity,
-      )
+      ),
+      OutputTotalExpress(
+        totalvalue: controllers.addtotalfunction(),
+      ),
     ],
   ));
 }
