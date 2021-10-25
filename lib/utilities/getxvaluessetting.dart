@@ -36,11 +36,11 @@ class Maincontroller extends GetxController {
     });
     ever(nowrows, (_) {
       box.write('nowrows', nowrows);
-      print('실핼');
+      print('실행');
     });
     ever(addrows, (_) {
       box.write('addrows', addrows);
-      print('실핼');
+      print('실행');
     });
     if(box.read('totalrows')!= null)
     {
@@ -65,11 +65,11 @@ class Maincontroller extends GetxController {
     addHavingQuantity.close();
   }
 
-  //현재 총 금액
+  //현재 총금액
   dynamic get nowtotal =>
       num.parse(nowprice.value) * num.parse(nowqunatity.value);
 
-  //추가 총 금액
+  //추가 총금액
   dynamic get addtotal =>
       num.parse(addprice.value) * num.parse(addqunatity.value);
 
@@ -99,7 +99,7 @@ class Maincontroller extends GetxController {
     return a;
   }
 
-  //최종수량
+  //최종 수량
   resulttotalaverageprice2function() {
     try {
       dynamic targetvaluedecimal =
@@ -136,7 +136,7 @@ class Maincontroller extends GetxController {
     return a;
   }
 
-  //최종수량
+  //최종 수량
   resulttotalqunatityfunction() {
     try {
       dynamic targetvaluedecimal =
@@ -173,7 +173,7 @@ class Maincontroller extends GetxController {
     return a;
   }
 
-  //최종금액
+  //최종 금액
   resulttotalpricefunction() {
     try {
       dynamic targetvaluedecimal =
@@ -200,7 +200,7 @@ class Maincontroller extends GetxController {
     }
   }
 
-  //현재금액
+  //현재 금액
   nowtotalfunction() {
     try {
       dynamic targetvaluedecimal =
@@ -227,7 +227,7 @@ class Maincontroller extends GetxController {
     }
   }
 
-  //추가금액
+  //추가 금액
   addtotalfunction() {
     try {
       dynamic targetvaluedecimal =

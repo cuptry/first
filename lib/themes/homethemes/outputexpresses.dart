@@ -12,8 +12,7 @@ class OutPutExpresses {
       child: Column(
     children: [
       //최종보유 텍스트
-      Text(
-        "최 종 보 유".tr,
+      Text("최 종 보 유".tr,
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 22.0,
@@ -33,13 +32,13 @@ class OutPutExpresses {
         title: "총 금 액",
         resultvalue: controllers.textwidgetsprice1(),
       ),
-      SizedBox(height: 10.0),
       Divider(
-        height: 40.0,
+        height: 38.0,
         thickness: 1.0,
         indent: 32.0,
         endIndent: 32.0,
       ),
+      SizedBox(height: 10.0),
     ],
   ));
 }
@@ -62,10 +61,12 @@ class totalresult extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
+                  alignment: Alignment.centerLeft,
                   width: MediaQuery.of(context).size.width * 0.15,
+                  height: MediaQuery.of(context).size.height * 0.05,
                   child: Text(title.tr,
                       style: TextStyle(
-                          color: Color.fromRGBO(50, 50, 93, 1),
+                          color: AppColors.text,
                           fontSize: 14.0)),
                 ),
                 Container(
@@ -73,7 +74,8 @@ class totalresult extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.55,
                   height: MediaQuery.of(context).size.height * 0.05,
                   child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal, child: resultvalue),
+                      scrollDirection: Axis.horizontal,
+                      child: resultvalue),
                 ),
               ],
             ),

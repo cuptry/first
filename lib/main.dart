@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:averageprice_calculator/screens/home.dart';
 import 'package:averageprice_calculator/screens/settings.dart';
-import 'package:averageprice_calculator/screens/tansactionlist.dart';
+import 'package:averageprice_calculator/screens/transactionlist.dart';
 import 'package:averageprice_calculator/utilities/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
