@@ -81,6 +81,7 @@ class Messages extends Translations {
           "중국어": "Chinese",
           "한국어": "Korean",
           "다크모드": "Dark Mode",
+          "저 장 소": "Transaction List",
           "저장완료": "Save successfully",
           "저장 내역들을 보려면 터치하세요":
               "Touch here if you want to see the saved transactions."

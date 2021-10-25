@@ -1,72 +1,77 @@
 import 'package:averageprice_calculator/utilities/getxvaluessetting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 
 final controllers = Get.put(Maincontroller());
 class TransactionDatatable extends StatelessWidget {
   const TransactionDatatable({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Obx(
-        () => DataTable(
-          headingRowHeight: 40,
-          dataRowHeight: 75,
-          showCheckboxColumn: false,
-          dataTextStyle:
-              TextStyle(color: Color.fromRGBO(50, 50, 93, 1), fontSize: 14.0),
-          columnSpacing: 15,
-          columns: [
-            DataColumn(
-              label: Container(
-                // width: MediaQuery.of(context).size.width * 0.05,
-                child: Text('#',
-                    style: TextStyle(
-                        color: Color.fromRGBO(50, 50, 93, 1), fontSize: 14.0)),
-              ),
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Container(
+          child: Obx(
+            () => DataTable(
+              headingRowHeight: 30,
+              dataRowHeight: 74,
+              showCheckboxColumn: false,
+              dataTextStyle: TextStyle(
+                  color: Color.fromRGBO(50, 50, 93, 1), fontSize: 14.0),
+              columnSpacing: 18,
+              columns: [
+                DataColumn(
+                  label: Container(
+                    child: Text('#',
+                        style: TextStyle(
+                            color: Color.fromRGBO(50, 50, 93, 1),
+                            fontSize: 14.0)),
+                  ),
+                ),
+                DataColumn(
+                  label: Container(
+                    child: Text('구 분'.tr,
+                        style: TextStyle(
+                            color: Color.fromRGBO(50, 50, 93, 1),
+                            fontSize: 14.0)),
+                  ),
+                ),
+                DataColumn(
+                  label: Container(
+                    child: Text('평 단 가'.tr,
+                        style: TextStyle(
+                            color: Color.fromRGBO(50, 50, 93, 1),
+                            fontSize: 14.0)),
+                  ),
+                ),
+                DataColumn(
+                  label: Container(
+                    child: Text('수 량'.tr,
+                        style: TextStyle(
+                            color: Color.fromRGBO(50, 50, 93, 1),
+                            fontSize: 14.0)),
+                  ),
+                ),
+                DataColumn(
+                  label: Container(
+                    child: Text('총 금 액'.tr,
+                        style: TextStyle(
+                            color: Color.fromRGBO(50, 50, 93, 1),
+                            fontSize: 14.0)),
+                  ),
+                ),
+              ],
+              rows: datarows(controllers.totalrows, controllers.nowrows,
+                  controllers.addrows),
             ),
-            DataColumn(
-              label: Container(
-                // width: MediaQuery.of(context).size.width * 0.1,
-                child: Text('구 분'.tr,
-                    style: TextStyle(
-                        color: Color.fromRGBO(50, 50, 93, 1), fontSize: 14.0)),
-              ),
-            ),
-            DataColumn(
-              label: Container(
-                // width: MediaQuery.of(context).size.width * 0.3,
-                child: Text('평 단 가'.tr,
-                    style: TextStyle(
-                        color: Color.fromRGBO(50, 50, 93, 1), fontSize: 14.0)),
-              ),
-            ),
-            DataColumn(
-              label: Container(
-                // width: MediaQuery.of(context).size.width * 0.25,
-                child: Text('수 량'.tr,
-                    style: TextStyle(
-                        color: Color.fromRGBO(50, 50, 93, 1), fontSize: 14.0)),
-              ),
-            ),
-            DataColumn(
-              label: Container(
-                // width: MediaQuery.of(context).size.width * 0.4,
-                child: Text('총 금 액'.tr,
-                    style: TextStyle(
-                        color: Color.fromRGBO(50, 50, 93, 1), fontSize: 14.0)),
-              ),
-            ),
-          ],
-          rows: datarows(
-              controllers.totalrows, controllers.nowrows, controllers.addrows),
+          ),
         ),
       ),
     );
   }
 }
-
 
 //DataTable 값 row
 datarows(List totalrowvalue, List nowrowvalue, List addrowvalue) {

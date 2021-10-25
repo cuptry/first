@@ -28,6 +28,7 @@ class TansactionListPage extends StatelessWidget {
         elevation: 0.0,
       ),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: SafeArea(
           child: Padding(
             padding: EdgeInsets.only(right: 24, left: 24, bottom: 12),
@@ -54,20 +55,9 @@ class TansactionListPage extends StatelessWidget {
                 ),
               ),
               Container(
-                width: MediaQuery.of(context).size.width * 0.95,
-                height: MediaQuery.of(context).size.height * 0.04,
+                height: MediaQuery.of(context).size.height * 0.06,
                 alignment: Alignment.centerRight,
                 child: Container(
-                  // decoration: BoxDecoration(
-                  //   border: Border.all(
-                  //       width: 0.5,
-                  //       color: Colors.black
-                  //   ),
-                  //   borderRadius: BorderRadius
-                  //       .all(
-                  //       Radius.circular(5.0)
-                  //   ),
-                  // ),
                   child: ListResetButton(),
                 ),
               ),
