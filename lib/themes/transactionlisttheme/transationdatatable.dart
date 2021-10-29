@@ -1,8 +1,10 @@
+import 'package:averageprice_calculator/themes/transactionlisttheme/popupdelete.dart';
 import 'package:averageprice_calculator/utilities/getxvaluessetting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 final controllers = Get.put(Maincontroller());
+
 class TransactionDatatable extends StatelessWidget {
   const TransactionDatatable({Key? key}) : super(key: key);
 
@@ -98,78 +100,16 @@ datarows(List totalrowvalue, List nowrowvalue, List addrowvalue) {
         onSelectChanged: (choicevalue) {
           Get.dialog(
             Dialog(
-              child: Column(mainAxisSize: MainAxisSize.min,
-                  // To make the card compact
-                  children: <Widget>[
-                    Container(
-                      height: 120,
-                      decoration: new BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(40.0)),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        // To make the card compact
-                        children: <Widget>[
-                          SizedBox(height: 24.0),
-                          Text(
-                            '선택하세요'.tr,
-                            style: TextStyle(
-                                fontSize: 14.0, fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(height: 14.0),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              TextButton(
-                                onPressed: () {
-                                  controllers.nowHavingPrice.value.text =
-                                      totalrowvalue[i]['averageprice']
-                                          .toString();
-                                  controllers.nowHavingQuantity.value.text =
-                                      totalrowvalue[i]['quantity'].toString();
-                                  controllers.nowprice.value = totalrowvalue[i]
-                                          ['averageprice']
-                                      .toString();
-                                  controllers.nowqunatity.value =
-                                      totalrowvalue[i]['quantity'].toString();
-                                  controllers.addHavingPrice.value.clear();
-                                  controllers.addHavingQuantity.value.clear();
-                                  controllers.addprice.value = '';
-                                  controllers.addqunatity.value = '';
-                                  Get.back();
-                                },
-                                child: Text(
-                                  "현재보유로 이동".tr,
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  print(i);
-                                  controllers.totalrows.removeAt(i);
-                                  controllers.nowrows.removeAt(i);
-                                  controllers.addrows.removeAt(i);
-                                  Get.back();
-                                },
-                                child: Text(
-                                  "삭제".tr,
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  Get.back();
-                                },
-                                child: Text(
-                                  "선택 취소".tr,
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                  ]),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(Consts.padding),
+              ),
+              elevation: 0.0,
+              backgroundColor: Colors.transparent,
+              child: Popupdelete(
+                nowrowvalue: [],
+                addrowvalue: [],
+                totalrowvalue: [],
+              ),
             ),
           );
         },

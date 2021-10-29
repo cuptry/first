@@ -39,7 +39,7 @@ class ListResetButton extends StatelessWidget {
                         children: <Widget>[
                           SizedBox(height: 24.0),
                           Text(
-                            '초기화 하시겠습니까?'.tr,
+                            '초기화하시겠습니까?'.tr,
                             style: TextStyle(
                                 fontSize: 14.0, fontWeight: FontWeight.bold),
                           ),
@@ -55,7 +55,7 @@ class ListResetButton extends StatelessWidget {
                                   Get.back();
                                 },
                                 child: Text(
-                                  "삭제".tr,
+                                  "네".tr,
                                 ),
                               ),
                               TextButton(
@@ -63,7 +63,7 @@ class ListResetButton extends StatelessWidget {
                                   Get.back();
                                 },
                                 child: Text(
-                                  "취소".tr,
+                                  "아니요".tr,
                                 ),
                               ),
                             ],
