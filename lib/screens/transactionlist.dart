@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
+
 import 'package:averageprice_calculator/constants/Theme.dart';
 import 'package:averageprice_calculator/themes/transactionlisttheme/listresetbutton.dart';
-import 'package:averageprice_calculator/themes/transactionlisttheme/transactiontitle.dart';
 import 'package:averageprice_calculator/themes/transactionlisttheme/transationdatatable.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

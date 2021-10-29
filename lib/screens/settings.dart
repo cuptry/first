@@ -1,10 +1,22 @@
-import 'package:averageprice_calculator/constants/Theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:averageprice_calculator/constants/Theme.dart';
+import 'package:averageprice_calculator/themes/settingsthemes/popuplanguage.dart';
+import 'package:averageprice_calculator/themes/settingsthemes/popuptheme.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsPage extends StatelessWidget {
+  _launchURL(url) async {
+    const url = '';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,23 +91,25 @@ class SettingsPage extends StatelessWidget {
                                     fontSize: 16.0)),
                           ),
                           Container(
+                            alignment: Alignment.centerRight,
                             width: MediaQuery.of(context).size.width * 0.35,
-                            child: MaterialButton(
-                              onPressed: () {},
-                              child: Container(
-                                alignment: Alignment.centerRight,
-                                child: Container(
-                                  width: 22,
-                                  child: Obx(() => RawMaterialButton(
-                                        child: Text('　'),
-                                        elevation: 2.0,
-                                        padding: EdgeInsets.all(15.0),
-                                        shape: CircleBorder(),
-                                        onPressed: () {
-                                          // popuptheme();
-                                        },
-                                      )),
-                                ),
+                            height: 26,
+                            child: Container(
+                              child: RawMaterialButton(
+                                elevation: 2.0,
+                                fillColor: Colors.red,
+                                child: Text('　'),
+                                padding: EdgeInsets.all(4.0),
+                                shape: CircleBorder(),
+                                onPressed: () {
+                                  showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return Popuptheme(
+                                          title: "테마",
+                                        );
+                                      });
+                                },
                               ),
                             ),
                           ),
@@ -117,7 +131,13 @@ class SettingsPage extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.35,
                             child: MaterialButton(
                               onPressed: () {
-                                // popuplanguage();
+                                showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return Popuplanguage(
+                                        title: "언어".tr, languagestitle: '',
+                                      );
+                                    });
                               },
                               child: Container(
                                 alignment: Alignment.centerRight,
@@ -226,7 +246,7 @@ class SettingsPage extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * 0.35,
                               child: MaterialButton(
                                 onPressed: () {
-                                  // _launchURL("https://youtube.com");
+                                   _launchURL("https://valueto.github.io/T&C");
                                 },
                                 child: Container(
                                     alignment: Alignment.centerRight,
@@ -284,7 +304,7 @@ class SettingsPage extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * 0.35,
                               child: MaterialButton(
                                 onPressed: () {
-                                  // _launchURL("mailto:redjoun@gmail.com");
+                                   _launchURL("mailto:redjoun@gmail.com");
                                 },
                                 child: Container(
                                     alignment: Alignment.centerRight,
@@ -307,3 +327,5 @@ class SettingsPage extends StatelessWidget {
     );
   }
 }
+
+
