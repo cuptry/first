@@ -78,7 +78,7 @@ datarows(List totalrowvalue, List nowrowvalue, List addrowvalue) {
   controllers.datarowes.value = [];
   String aa = '';
   String bb = '';
-  String cc = '현 재'.tr + '\n' + '추 가'.tr + '\n' + '최 종';
+  String cc = '현 재'.tr + '\n' + '추 가'.tr + '\n' + '최 종'.tr;
   for (var i = 0; i < totalrowvalue.length; i++) {
     List<DataCell> cells = [];
     cells.add(DataCell(Text('${i + 1}')));

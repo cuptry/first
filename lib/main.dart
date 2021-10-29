@@ -26,8 +26,17 @@ class MyApp extends StatelessWidget {
         translations: Messages(),
         fallbackLocale: const Locale('en','US'),
         locale: Get.deviceLocale,
-        title: 'Averageprice Calculator',
-        theme: Get.isDarkMode? ThemeData.dark(): ThemeData.light(),
+        title: 'Average Price Calculator',
+
+        // Get.isDarkMode? ThemeData.dark(): ThemeData.light(),
+        theme: ThemeData(
+          fontFamily: 'OpenSans',
+          brightness: Brightness.light,
+        ),
+        darkTheme: ThemeData(
+          fontFamily: 'OpenSans',
+          brightness: Brightness.dark,
+        ),
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
         getPages: [

@@ -13,21 +13,21 @@ class OutputTotalExpress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.8,
+      width: MediaQuery.of(context).size.width * 0.75,
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             alignment: Alignment.centerLeft,
             width: MediaQuery.of(context).size.width * 0.15,
-            height: MediaQuery.of(context).size.height * 0.05,
+            height: MediaQuery.of(context).size.height * 0.045,
             child: Text("총 금 액".tr,
                 style: TextStyle(
                     color: Color.fromRGBO(50, 50, 93, 1), fontSize: 14.0)),
           ),
           Container(
             alignment: Alignment.centerRight,
-            width: MediaQuery.of(context).size.width * 0.63,
+            width: MediaQuery.of(context).size.width * 0.58,
             height: MediaQuery.of(context).size.height * 0.038,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),

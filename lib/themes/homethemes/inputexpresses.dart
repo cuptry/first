@@ -26,7 +26,7 @@ class Inputexpresses {
         totalvalue: controllers.nowtotalfunction(),
       ),
       SizedBox(
-        height: 14,
+        height: 18,
       ),
       BigeertotalFormFieldtitle(
           titleimage: Icons.arrow_right_rounded, title: '추가매수'),
@@ -94,31 +94,31 @@ class Inputformfields extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.8,
+      width: MediaQuery.of(context).size.width * 0.75,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             alignment: Alignment.centerLeft,
             width: MediaQuery.of(context).size.width * 0.15,
-            height: MediaQuery.of(context).size.height * 0.05,
+            height: MediaQuery.of(context).size.height * 0.045,
             child: Text(formfieldtitle.tr,
                 style: TextStyle(
                     color: Color.fromRGBO(50, 50, 93, 1), fontSize: 14.0)),
           ),
           Container(
             alignment: Alignment.centerRight,
-            width: MediaQuery.of(context).size.width * 0.65,
-            height: MediaQuery.of(context).size.height * 0.05,
+            width: MediaQuery.of(context).size.width * 0.6,
+            height: MediaQuery.of(context).size.height * 0.045,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(5.0)),
             ),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 3),
               child: Obx(
                 () => Container(
-                  width: MediaQuery.of(context).size.width * 0.625,
+                  width: MediaQuery.of(context).size.width * 0.58,
                   child: TextFormField(
                     textAlign: TextAlign.end,
                     controller: textcontoller.value,

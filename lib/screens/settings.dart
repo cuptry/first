@@ -1,3 +1,4 @@
+import 'package:averageprice_calculator/screens/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,9 +10,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 class SettingsPage extends StatelessWidget {
   _launchURL(url) async {
-    const url = '';
     if (await canLaunch(url)) {
-      await launch(url);
+      await launch(url, forceSafariVC: false, forceWebView: false);
     } else {
       throw 'Could not launch $url';
     }
@@ -42,7 +42,7 @@ class SettingsPage extends StatelessWidget {
             Container(
               child: SizedBox(
                 width: double.infinity,
-                child: MaterialButton(
+                child: FlatButton(
                   textColor: AppColors.white,
                   color: AppColors.info,
                   onPressed: null,
@@ -75,16 +75,16 @@ class SettingsPage extends StatelessWidget {
               ),
             ),
             Container(
-              width: MediaQuery.of(context).size.width * 0.8,
+              width: MediaQuery.of(context).size.width * 0.75,
               child: SingleChildScrollView(
                 child: Column(children: <Widget>[
                   Container(
-                    height: MediaQuery.of(context).size.height * 0.07,
+                    height: MediaQuery.of(context).size.height * 0.075,
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            width: MediaQuery.of(context).size.width * 0.45,
+                            width: MediaQuery.of(context).size.width * 0.4,
                             child: Text('테마'.tr,
                                 style: TextStyle(
                                     color: Color.fromRGBO(50, 50, 93, 1),
@@ -92,12 +92,12 @@ class SettingsPage extends StatelessWidget {
                           ),
                           Container(
                             alignment: Alignment.centerRight,
-                            width: MediaQuery.of(context).size.width * 0.35,
+                            width: MediaQuery.of(context).size.width * 0.3,
                             height: 26,
                             child: Container(
                               child: RawMaterialButton(
                                 elevation: 2.0,
-                                fillColor: Colors.red,
+                                fillColor: controllers.ThemeName.value,
                                 child: Text('　'),
                                 padding: EdgeInsets.all(4.0),
                                 shape: CircleBorder(),
@@ -116,33 +116,33 @@ class SettingsPage extends StatelessWidget {
                         ]),
                   ),
                   Container(
-                    height: MediaQuery.of(context).size.height * 0.07,
+                    height: MediaQuery.of(context).size.height * 0.075,
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            width: MediaQuery.of(context).size.width * 0.45,
+                            width: MediaQuery.of(context).size.width * 0.4,
                             child: Text('언어'.tr,
                                 style: TextStyle(
                                     color: Color.fromRGBO(50, 50, 93, 1),
                                     fontSize: 16.0)),
                           ),
                           Container(
-                            width: MediaQuery.of(context).size.width * 0.35,
-                            child: MaterialButton(
+                            width: MediaQuery.of(context).size.width * 0.3,
+                            child: FlatButton(
                               onPressed: () {
                                 showDialog(
                                     context: context,
                                     builder: (context) {
                                       return Popuplanguage(
-                                        title: "언어".tr, languagestitle: '',
+                                        title: "언어".tr,
                                       );
                                     });
                               },
                               child: Container(
                                 alignment: Alignment.centerRight,
                                 child: Text(
-                                  'Language',
+                                  controllers.langueges.value,
                                   style: TextStyle(
                                       color: Color.fromRGBO(50, 50, 93, 1),
                                       fontSize: 16.0),
@@ -170,26 +170,26 @@ class SettingsPage extends StatelessWidget {
               ),
             ),
             Container(
-              width: MediaQuery.of(context).size.width * 0.8,
+              width: MediaQuery.of(context).size.width * 0.75,
               child: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
                     Container(
-                      height: MediaQuery.of(context).size.height * 0.07,
+                      height: MediaQuery.of(context).size.height * 0.075,
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
-                              width: MediaQuery.of(context).size.width * 0.45,
+                              width: MediaQuery.of(context).size.width * 0.4,
                               child: Text('앱버전'.tr,
                                   style: TextStyle(
                                       color: Color.fromRGBO(50, 50, 93, 1),
                                       fontSize: 16.0)),
                             ),
                             Container(
-                              width: MediaQuery.of(context).size.width * 0.35,
-                              child: MaterialButton(
-                                onPressed: () {},
+                              width: MediaQuery.of(context).size.width * 0.3,
+                              child: FlatButton(
+                                onPressed: null,
                                 child: Container(
                                     alignment: Alignment.centerRight,
                                     child: Text("1.0.0",
@@ -201,50 +201,21 @@ class SettingsPage extends StatelessWidget {
                             ),
                           ]),
                     ),
-                    // Container(
-                    //   height: MediaQuery.of(context).size.height * 0.07,
-                    //   child: Row(
-                    //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    //       children: [
-                    //         Container(
-                    //           width: MediaQuery.of(context).size.width * 0.45,
-                    //           child: Text('라이센스'.tr,
-                    //               style: TextStyle(
-                    //                   color: Color.fromRGBO(50, 50, 93, 1),
-                    //                   fontSize: 16.0)),
-                    //         ),
-                    //         Container(
-                    //           width: MediaQuery.of(context).size.width * 0.35,
-                    //           child: FlatButton(
-                    //             onPressed: () {
-                    //               _launchURL("https://youtube.com");
-                    //             },
-                    //             child: Container(
-                    //                 alignment: Alignment.centerRight,
-                    //                 child: Text(">",
-                    //                     style: TextStyle(
-                    //                         color:
-                    //                             Color.fromRGBO(50, 50, 93, 1),
-                    //                         fontSize: 16.0))),
-                    //           ),
-                    //         ),
-                    //       ]),
-                    // ),
                     Container(
-                      height: MediaQuery.of(context).size.height * 0.07,
+                      height: MediaQuery.of(context).size.height * 0.075,
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
-                              width: MediaQuery.of(context).size.width * 0.45,
+                              width: MediaQuery.of(context).size.width * 0.4,
                               child: Text('이용약관'.tr,
                                   style: TextStyle(
                                       color: Color.fromRGBO(50, 50, 93, 1),
                                       fontSize: 16.0)),
                             ),
                             Container(
-                              width: MediaQuery.of(context).size.width * 0.35,
-                              child: MaterialButton(
+                              width: MediaQuery.of(context).size.width * 0.3,
+                              child: FlatButton(
                                 onPressed: () {
                                    _launchURL("https://valueto.github.io/T&C");
                                 },
@@ -259,50 +230,21 @@ class SettingsPage extends StatelessWidget {
                             ),
                           ]),
                     ),
-                    // Container(
-                    //   height: MediaQuery.of(context).size.height * 0.07,
-                    //   child: Row(
-                    //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    //       children: [
-                    //         Container(
-                    //           width: MediaQuery.of(context).size.width * 0.45,
-                    //           child: Text('앱 평가하기'.tr,
-                    //               style: TextStyle(
-                    //                   color: Color.fromRGBO(50, 50, 93, 1),
-                    //                   fontSize: 16.0)),
-                    //         ),
-                    //         Container(
-                    //           width: MediaQuery.of(context).size.width * 0.35,
-                    //           child: FlatButton(
-                    //             onPressed: () {
-                    //               _launchURL("https://youtube.com");
-                    //             },
-                    //             child: Container(
-                    //                 alignment: Alignment.centerRight,
-                    //                 child: Text(">",
-                    //                     style: TextStyle(
-                    //                         color:
-                    //                             Color.fromRGBO(50, 50, 93, 1),
-                    //                         fontSize: 16.0))),
-                    //           ),
-                    //         ),
-                    //       ]),
-                    // ),
                     Container(
-                      height: MediaQuery.of(context).size.height * 0.07,
+                      height: MediaQuery.of(context).size.height * 0.075,
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
-                              width: MediaQuery.of(context).size.width * 0.45,
+                              width: MediaQuery.of(context).size.width * 0.4,
                               child: Text('문의 및 의견'.tr,
                                   style: TextStyle(
                                       color: Color.fromRGBO(50, 50, 93, 1),
                                       fontSize: 16.0)),
                             ),
                             Container(
-                              width: MediaQuery.of(context).size.width * 0.35,
-                              child: MaterialButton(
+                              width: MediaQuery.of(context).size.width * 0.3,
+                              child: FlatButton(
                                 onPressed: () {
                                    _launchURL("mailto:redjoun@gmail.com");
                                 },

@@ -1,5 +1,7 @@
+import 'package:averageprice_calculator/screens/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Popuptheme extends StatelessWidget {
   var title;
@@ -62,7 +64,7 @@ class Popuptheme extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min, // To make the card compact
                   children: <Widget>[
                     Text(
-                      title,
+                      '테마'.tr,
                       style: TextStyle(
                           fontSize: 24.0,
                           fontWeight: FontWeight.w700,
@@ -86,7 +88,9 @@ class Popuptheme extends StatelessWidget {
                                 padding: EdgeInsets.all(15.0),
                                 shape: CircleBorder(),
                                 onPressed: () {
-
+                                  controllers.ThemeImage.value = 'assets/img/profile-screen-bg_orange.png';
+                                  controllers.ThemeName.value = Colors.orange;
+                                  Get.toNamed("/home");
                                 },
                               ),
                             ),
@@ -100,6 +104,9 @@ class Popuptheme extends StatelessWidget {
                                 padding: EdgeInsets.all(15.0),
                                 shape: CircleBorder(),
                                 onPressed: () {
+                                  controllers.ThemeImage.value = 'assets/img/profile-screen-bg_green.png';
+                                  controllers.ThemeName.value = Colors.green;
+                                  Get.toNamed("/home");
                                 },
                               ),
                             ),
@@ -113,6 +120,9 @@ class Popuptheme extends StatelessWidget {
                                 padding: EdgeInsets.all(15.0),
                                 shape: CircleBorder(),
                                 onPressed: () {
+                                  controllers.ThemeImage.value = 'assets/img/profile-screen-bg.png';
+                                  controllers.ThemeName.value = Colors.blue;
+                                  Get.toNamed("/home");
                                 },
                               ),
                             ),
@@ -142,6 +152,9 @@ class Popuptheme extends StatelessWidget {
                                 padding: EdgeInsets.all(15.0),
                                 shape: CircleBorder(),
                                 onPressed: () {
+                                  controllers.ThemeImage.value = 'assets/img/profile-screen-bg_purple.png';
+                                  controllers.ThemeName.value = Colors.purple;
+                                  Get.toNamed("/home");
                                 },
                               ),
                             ),
@@ -155,6 +168,9 @@ class Popuptheme extends StatelessWidget {
                                 padding: EdgeInsets.all(15.0),
                                 shape: CircleBorder(),
                                 onPressed: () {
+                                  controllers.ThemeImage.value = 'assets/img/profile-screen-bg_grey.png';
+                                  controllers.ThemeName.value = Colors.grey;
+                                  Get.toNamed("/home");
                                 },
                               ),
                             ),

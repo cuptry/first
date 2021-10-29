@@ -5,6 +5,13 @@ import 'package:get_storage/get_storage.dart';
 import 'package:intl/intl.dart';
 
 class Maincontroller extends GetxController {
+
+  var languagestitle = '언어선택'.obs;
+  var langueges = '언어'.tr.obs;
+
+  var ThemeImage = "assets/img/profile-screen-bg.png".obs;
+  dynamic ThemeName = Colors.blue.obs;
+
   var nowHavingPrice = TextEditingController().obs;
   var nowHavingQuantity = TextEditingController().obs;
   var addHavingPrice = TextEditingController().obs;
@@ -16,6 +23,7 @@ class Maincontroller extends GetxController {
   var totalrows = [].obs;
   var nowrows = [].obs;
   var addrows = [].obs;
+
   RxList<DataRow> datarowes = <DataRow>[].obs;
   final formatCurrency =
   NumberFormat.currency(symbol: '', decimalDigits: 0); //소수점 없는 가격
@@ -65,24 +73,24 @@ class Maincontroller extends GetxController {
     addHavingQuantity.close();
   }
 
-  //현재 총금액
+  // 현재 총 금액
   dynamic get nowtotal =>
       num.parse(nowprice.value) * num.parse(nowqunatity.value);
 
-  //추가 총금액
+  // 추가 총 금액
   dynamic get addtotal =>
       num.parse(addprice.value) * num.parse(addqunatity.value);
 
-  //최종 금액 값
+  // 최종 금액 값
   dynamic get resulttotalprice =>
       (num.parse(nowprice.value) * num.parse(nowqunatity.value)) +
           (num.parse(addprice.value) * num.parse(addqunatity.value));
 
-  //최종 수량 값
+  // 최종 수량 값
   dynamic get resulttotalqunatity =>
       num.parse(nowqunatity.value) + num.parse(addqunatity.value);
 
-  //최종 평단가
+  // 최종 평단가
   dynamic get resulttotalaverageprice =>
       resulttotalprice ~/ resulttotalqunatity;
 
@@ -99,7 +107,7 @@ class Maincontroller extends GetxController {
     return a;
   }
 
-  //최종 수량
+  // 최종 수량
   resulttotalaverageprice2function() {
     try {
       dynamic targetvaluedecimal =
@@ -136,7 +144,7 @@ class Maincontroller extends GetxController {
     return a;
   }
 
-  //최종 수량
+  // 최종 수량
   resulttotalqunatityfunction() {
     try {
       dynamic targetvaluedecimal =
@@ -173,7 +181,7 @@ class Maincontroller extends GetxController {
     return a;
   }
 
-  //최종 금액
+  // 최종 금액
   resulttotalpricefunction() {
     try {
       dynamic targetvaluedecimal =
@@ -200,7 +208,7 @@ class Maincontroller extends GetxController {
     }
   }
 
-  //현재 금액
+  // 현재 금액
   nowtotalfunction() {
     try {
       dynamic targetvaluedecimal =
@@ -227,7 +235,7 @@ class Maincontroller extends GetxController {
     }
   }
 
-  //추가 금액
+  // 추가 금액
   addtotalfunction() {
     try {
       dynamic targetvaluedecimal =

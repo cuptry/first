@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 Getxadmobtool c = Get.put(Getxadmobtool());
+
 final controllers = Get.put(Maincontroller());
 
 class StartPage extends StatelessWidget {

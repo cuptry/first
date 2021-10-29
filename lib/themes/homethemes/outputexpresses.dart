@@ -33,12 +33,12 @@ class OutPutExpresses {
         resultvalue: controllers.textwidgetsprice1(),
       ),
       Divider(
-        height: 38.0,
+        height: 36.0,
         thickness: 1.0,
         indent: 32.0,
         endIndent: 32.0,
       ),
-      SizedBox(height: 10.0),
+      SizedBox(height: 6.0),
     ],
   ));
 }

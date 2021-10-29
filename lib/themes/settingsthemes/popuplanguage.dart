@@ -1,12 +1,13 @@
+import 'package:averageprice_calculator/screens/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Popuplanguage extends StatelessWidget {
-  var title, languagestitle;
+  var title;
 
   Popuplanguage({
     required this.title,
-    required this.languagestitle,
   });
 
   @override
@@ -64,7 +65,7 @@ class Popuplanguage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min, // To make the card compact
               children: <Widget>[
                 Text(
-                  '언 어',
+                  '언 어'.tr,
                   style: TextStyle(
                       fontSize: 24.0,
                       fontWeight: FontWeight.w700,
@@ -79,17 +80,39 @@ class Popuplanguage extends StatelessWidget {
                   child: ListView(
                     children: <Widget>[
                       ListTile(
-                        title: Text('영어', textAlign: TextAlign.center),
-                        onTap: () {
-
-                        },
+                        title: FlatButton(
+                          onPressed: () {
+                            changeLanguage('en', 'US');
+                            controllers.langueges.value='영어'.tr;
+                            Get.back();
+                          },
+                          child: Container(
+                              alignment: Alignment.center,
+                              child: Text('영어'.tr,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color:
+                                      Color.fromRGBO(50, 50, 93, 1),
+                                      fontSize: 16.0))),
+                        ),
                       ),
                       SizedBox(height: 12.0),
                       ListTile(
-                        title: Text('한국어', textAlign: TextAlign.center),
-                        onTap: () {
-
-                        },
+                        title: FlatButton(
+                          onPressed: () {
+                            changeLanguage('ko', 'KR');
+                            controllers.langueges.value='한국어'.tr;
+                            Get.back();
+                          },
+                          child: Container(
+                              alignment: Alignment.center,
+                              child: Text('한국어'.tr,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color:
+                                      Color.fromRGBO(50, 50, 93, 1),
+                                      fontSize: 16.0))),
+                        ),
                       ),
                     ],
                   ),
@@ -128,8 +151,8 @@ class Consts {
   static const double avatarRadius = 16.0;
 }
 
-// //언어 교체
-// void changeLanguage(var param1, var param2) {
-//   var locale = Locale(param1, param2);
-//   Get.updateLocale(locale);
-// }
+//언어 교체
+void changeLanguage(var param1, var param2) {
+  var locale = Locale(param1, param2);
+  Get.updateLocale(locale);
+}
